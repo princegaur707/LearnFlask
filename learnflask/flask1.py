@@ -8,5 +8,6 @@ def hello():
 
 @app.route("/prince")
 def prince():
-    return render_template('about.html')
+    name='Prince Gaur'
+    return render_template('about.html',name1=name)
 app.run(debug=True)
