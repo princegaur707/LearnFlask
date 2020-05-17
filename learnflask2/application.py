@@ -13,5 +13,9 @@ def about():
 @app.route("/contact.html")
 def contact():
     return render_template('contact.html')
+
+@app.route("/post.html")
+def post():
+    return render_template('post.html')
     
 app.run(debug=True)
