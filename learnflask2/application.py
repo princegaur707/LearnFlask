@@ -6,6 +6,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/blogmaniac'
 db = SQLAlchemy(app)
 
 class contacts(db.Model):
+    
     SNo= db.Column(db.Integer, primary_key=True)
     Name = db.Column(db.String(80), unique=True,nullable=False)
     Date = db.Column(db.String(120), unique=True)
@@ -14,9 +15,10 @@ class contacts(db.Model):
     Message = db.Column(db.String(120), unique=True,nullable=False)
 
 class posts(db.Model):
+
     SNo= db.Column(db.Integer, primary_key=True)
     Title= db.Column(db.String(80), unique=True,nullable=False)
-    Content= db.Column(db.String(120), unique=True,nulla)
+    Content= db.Column(db.String(120), unique=True,nullable=False)
     Date= db.Column(db.String(120), unique=True)
 
 @app.route("/")
@@ -26,6 +28,7 @@ def home():
 @app.route("/about.html")
 def about():
     return render_template('about.html')
+
 
 @app.route("/contact.html")
 def contact():
