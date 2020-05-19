@@ -2,7 +2,7 @@ import flask
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 app= Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost/db_name'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/blogmaniac'
 db = SQLAlchemy(app)
 
 class User(db.Model):
@@ -11,7 +11,7 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True)
 
 
-    
+
 @app.route("/")
 def home():
     return render_template('index.html')
