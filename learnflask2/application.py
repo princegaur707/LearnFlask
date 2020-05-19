@@ -5,13 +5,20 @@ app= Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/blogmaniac'
 db = SQLAlchemy(app)
 
-class Contacts(db.Model):
+class contacts(db.Model):
     SNo= db.Column(db.Integer, primary_key=True)
-    Name = db.Column(db.String(80), unique=True)
+    Name = db.Column(db.String(80), unique=True,nullable=False)
     Date = db.Column(db.String(120), unique=True)
-    Email= db.Column(db.String(120), unique=True)
-    Phone_number = db.Column(db.String(120), unique=True)
-    Message = db.Column(db.String(120), unique=True)
+    Email= db.Column(db.String(120), unique=True,nullable=False)
+    Phone_number = db.Column(db.String(120), unique=True,nullable=False)
+    Message = db.Column(db.String(120), unique=True,nullable=False)
+
+class posts(db.Model):
+    SNo= db.Column(db.Integer, primary_key=True)
+    Title= db.Column(db.String(80), unique=True,nullable=False)
+    Content= db.Column(db.String(120), unique=True,nulla)
+    Date= db.Column(db.String(120), unique=True)
+
 @app.route("/")
 def home():
     return render_template('index.html')
