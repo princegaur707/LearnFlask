@@ -1,0 +1,11 @@
+{
+    "params":
+    {
+
+        "local_server":"True",
+        "local_uri": "mysql://root:@localhost/blogmaniac" ,
+        "prod_url": "mysql://root:@localhost/blogmaniac"
+
+
+    }
+}

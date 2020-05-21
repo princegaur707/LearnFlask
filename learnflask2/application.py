@@ -2,8 +2,16 @@ import flask
 from flask import Flask, render_template,request
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import json
+
+with open('config.json','r') as c: 
+    params= json.load(c) {"params"}
+
 app= Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/blogmaniac'
+if local_server:
+    app.config['SQLALCHEMY_DATABASE_URI'] = params['local_uri']
+else:
+    app.config['SQLALCHEMY_DATABASE_URI'] = params['prod_uri']
 db = SQLAlchemy(app)
 
 class Contacts(db.Model):
@@ -39,7 +47,7 @@ def contact():
         email=request.form.get('email')
         phone=request.form.get('phone')
         message=request.form.get('message')
-        entry=Contacts(Name=name, Email=email,Phone_number=phone,Message=message)
+        entry=Contacts(Name=name, Email=email, Date=datetime.now(),Phone_number=phone,Message=message)
         db.session.add(entry)
         db.session.commit()
         
