@@ -25,18 +25,18 @@ class Contacts(db.Model):
 
 class posts(db.Model):
 
-    SNo= db.Column(db.Integer, primary_key=True)
+    SNo= db.Column(db.Integer, pri mary_key=True)
     Title= db.Column(db.String(80), unique=True,nullable=False)
     Content= db.Column(db.String(120), unique=True,nullable=False)
     Date= db.Column(db.String(120), nullable=True)
 
 @app.route("/")
 def home():
-    return render_template('index.html')
+    return render_template('index.html',params=params)
 
 @app.route("/about.html")
 def about():
-    return render_template('about.html')
+    return render_template('about.html',params=params)
 
 
 @app.route("/contact.html",methods={'GET','POST'})

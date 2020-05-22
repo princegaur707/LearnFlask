@@ -4,7 +4,10 @@
 
         "local_server":"True",
         "local_uri": "mysql://root:@localhost/blogmaniac" ,
-        "prod_url": "mysql://root:@localhost/blogmaniac"
+        "prod_uri": "mysql://root:@localhost/blogmaniac",
+        "fb_url": "https://www.facebook.com/prince.gaur.587268/",
+        "tw_url": "https://twitter.com/PrincegaurIN",
+        "gh_url": "https://github.com/proxy707"
 
 
     }
