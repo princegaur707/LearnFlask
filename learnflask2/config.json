@@ -5,10 +5,12 @@
         "local_server":"True",
         "local_uri": "mysql://root:@localhost/blogmaniac" ,
         "prod_uri": "mysql://root:@localhost/blogmaniac",
-        "fb_url": "https://www.facebook.com/prince.gaur.587268/",
-        "tw_url": "https://twitter.com/PrincegaurIN",
-        "gh_url": "https://github.com/proxy707"
-
-
+        "fb_uri": "https://www.facebook.com/prince.gaur.587268/",
+        "tw_uri": "https://twitter.com/PrincegaurIN",
+        "gh_uri": "https://github.com/proxy707",
+        "gmail-user": "princegaur1998@gmail.com",
+        "gmail-password": "Princeg@ur98",
+        "blog_name" : "The Blog Maniac",
+        "tag_line": "The deeper you analyze the better you write..."
     }
 }
