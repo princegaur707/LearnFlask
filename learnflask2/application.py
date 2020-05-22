@@ -62,11 +62,16 @@ def contact():
         entry=Contacts(Name=name, Email=email, Date=datetime.now(),Phone_number=phone,Message=message)
         db.session.add(entry)
         db.session.commit()
+        mail.send_message('Blog Maniac query from '+ name,
+                            sender=email,
+                            recipients=[params['gmail-user']],
+                            body = message + "\n" + phone
+        )
         
-    return render_template('contact.html')
+    return render_template('contact.html',params=params)
 
 @app.route("/post.html")
 def post():
-    return render_template('post.html')
+    return render_template('post.html',params=params)
     
 app.run(debug=True)
