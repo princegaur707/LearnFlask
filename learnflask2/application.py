@@ -35,13 +35,14 @@ class Contacts(db.Model):
     Phone_number = db.Column(db.String(120), unique=True,nullable=False)
     Message = db.Column(db.String(120), unique=True,nullable=False)
 
-class posts(db.Model):
+class Posts(db.Model):
 
     SNo= db.Column(db.Integer, primary_key=True)
     Title= db.Column(db.String(80), unique=True,nullable=False)
+    slug= db.Column(db.String(25), nullable=False)
     Content= db.Column(db.String(120), unique=True,nullable=False)
-    Date= db.Column(db.String(120), nullable=True)
-
+    Date= db.Column(db.String(12), nullable=True)
+    
 @app.route("/")
 def home():
     return render_template('index.html', params=params)
@@ -70,8 +71,8 @@ def contact():
         
     return render_template('contact.html',params=params)
 
-@app.route("/post.html")
-def post():
+@app.route("/post")
+def post_route():
     return render_template('post.html',params=params)
     
 app.run(debug=True)
