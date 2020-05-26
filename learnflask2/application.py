@@ -39,6 +39,7 @@ class Posts(db.Model):
 
     SNo= db.Column(db.Integer, primary_key=True)
     Title= db.Column(db.String(80), unique=True,nullable=False)
+    Subheading = db.Column(db.String(80),unique=True,nullable=True)
     slug= db.Column(db.String(25), nullable=False)
     Content= db.Column(db.String(120), unique=True,nullable=False)
     image= db.Column(db.String(25),unique=True,nullable =False)
@@ -72,7 +73,7 @@ def contact():
         
     return render_template('contact.html',params=params)
 
-@app.route("/post/<string:post_slug>", methods=['GET'])
+@app.route("/post.html/<string:post_slug>", methods=['GET'])
 def post_route(post_slug):
     #fetch post
     post= Posts.query.filter_by(slug=post_slug).first()

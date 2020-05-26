@@ -10,10 +10,11 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-heading">
             <h1>{{ post.Title }}</post></h1>
-            <h2 class="subheading">Problems look mighty small from 150 miles up</h2>
+            <h2 class="subheading">{{ post.Subheading }} </h2>
+            <h3 class ="subheading"></h3>
             <span class="meta">Posted by
-              <a href="#">Start Bootstrap</a>
-              on August 24, 2019</span>
+              <a href="https://princeportfolio.herokuapp.com" target="_blank">Prince Gaur</a>
+              on {{ post.Date }}</span>
           </div>
         </div>
       </div>
@@ -25,6 +26,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
+          <h2>Consistency+dedication+patience and you are done. Want brief path? Let's start then</h2>
           {{ post.Content}}
         </div>
       </div>
