@@ -41,6 +41,7 @@ class Posts(db.Model):
     Title= db.Column(db.String(80), unique=True,nullable=False)
     slug= db.Column(db.String(25), nullable=False)
     Content= db.Column(db.String(120), unique=True,nullable=False)
+    image= db.Column(db.String(25),unique=True,nullable =False)
     Date= db.Column(db.String(12), nullable=True)
     
 @app.route("/")

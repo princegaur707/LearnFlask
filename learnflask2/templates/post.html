@@ -2,7 +2,8 @@
 <!-- % must be used just after the braces otherwise error -->
 {% block body %}
   <!-- Page Header -->
-  <header class="masthead" style="background-image: url('   {{ url_for("static",filename='img/{{post.image}}')   }}  ')">
+  {% set fname = 'img/'+ post.image %}
+  <header class="masthead" style="background-image: url('   {{ url_for("static",filename=fname)   }}  ')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
