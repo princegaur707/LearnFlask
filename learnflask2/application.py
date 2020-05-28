@@ -45,10 +45,12 @@ class Posts(db.Model):
     Content= db.Column(db.String(120), unique=True,nullable=False)
     image= db.Column(db.String(25),unique=True,nullable =False)
     Date= db.Column(db.String(12), nullable=True)
+    Author = db.Column(db.String(101),nullable=True)
     
 @app.route("/")
 def home():
-    return render_template('index.html', params=params)
+    posts=Posts.query.filter_by().all()
+    return render_template('index.html', params=params,posts=posts)
 
 @app.route("/about.html")
 def about():
