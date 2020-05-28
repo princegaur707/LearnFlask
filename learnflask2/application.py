@@ -40,7 +40,7 @@ class Posts(db.Model):
     SNo= db.Column(db.Integer, primary_key=True)
     Title= db.Column(db.String(80), unique=True,nullable=False)
     Subheading = db.Column(db.String(80),unique=True,nullable=True)
-    Bodyheading = db.Column(db.String(101),False,nullable=True)
+    Bodyheading = db.Column(db.String(101),unique=False,nullable=True)
     slug= db.Column(db.String(25), unique=True,nullable=False)
     Content= db.Column(db.String(120), unique=True,nullable=False)
     image= db.Column(db.String(25),unique=True,nullable =False)
