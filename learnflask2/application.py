@@ -49,8 +49,8 @@ class Posts(db.Model):
     
 @app.route("/")
 def home():
-    posts=Posts.query.filter_by().all()[0:params['no_of_posts']]
-    return render_template('index.html', params=params,posts=posts)
+    posts = Posts.query.filter_by().all()[0:params["no_of_posts"]]
+    return render_template('index.html', params=params, posts=posts)
 
 
 @app.route("/about.html")
@@ -77,7 +77,7 @@ def contact():
         
     return render_template('contact.html',params=params)
 
-@app.route("/post.html/<string:post_slug>", methods=['GET'])
+@app.route("/post.html/", methods=['GET'])
 def post_route(post_slug):
     #fetch post
     post= Posts.query.filter_by(slug=post_slug).first()
