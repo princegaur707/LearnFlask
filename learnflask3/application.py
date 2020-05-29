@@ -49,7 +49,7 @@ class Posts(db.Model):
     
 @app.route("/")
 def home():
-    posts = Posts.query.filter_by().all()[0:2]
+    posts = Posts.query.filter_by().all()[0:5]
     return render_template('index.html', params=params, posts=posts)
 
 
@@ -57,6 +57,13 @@ def home():
 def about():
     return render_template('about.html',params=params)
 
+@app.route("/signup.html")
+def signup():
+    return render_template('signup.html')
+
+@app.route("/login.html")
+def login():
+    return render_template('login.html',params=params)
 
 @app.route("/contact.html",methods={'GET','POST'})
 def contact():
