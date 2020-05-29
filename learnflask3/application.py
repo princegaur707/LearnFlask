@@ -49,7 +49,7 @@ class Posts(db.Model):
     
 @app.route("/")
 def home():
-    posts = Posts.query.filter_by().all()[0:params['no_of_posts']]
+    posts = Posts.query.filter_by().all()[0:2]
     return render_template('index.html', params=params, posts=posts)
 
 

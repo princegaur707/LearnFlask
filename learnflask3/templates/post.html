@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+<!-- % must be used just after the braces otherwise error -->
+{% block body %}
+  <!-- Page Header -->
+  {% set fname = 'img/'+ post.image %}
+  <header class="masthead" style="background-image: url('   {{ url_for("static",filename=fname)   }}  ')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1>{{ post.Title }}</post></h1>
+            <h2 class="subheading">{{ post.Subheading }} </h2>
+            <h3 class ="subheading"></h3>
+            <span class="meta">Posted by
+              <a href="https://princeportfolio.herokuapp.com" target="_blank">{{ post.Author }}</a>
+              on {{ post.Date }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Post Content -->
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <h2>{{ post.Bodyheading }}</h2>
+          {{ post.Content}}
+        </div>
+      </div>
+    </div>
+  </article>
+
+{% endblock %}
