@@ -57,6 +57,10 @@ def home():
 def about():
     return render_template('about.html',params=params)
 
+@app.route("/allposts.html")
+def post():
+    posts = Posts.query.filter_by().all()
+    return render_template('allposts.html', params=params, posts=posts)
 
 @app.route("/contact.html",methods={'GET','POST'})
 def contact():
