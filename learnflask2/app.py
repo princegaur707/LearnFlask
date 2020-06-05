@@ -88,5 +88,5 @@ def post_route(post_slug):
     return render_template('post.html',params=params,post=post)
     
 if __name__ == "__main__": 
-		app.run() 
+		app.run(debug=True)
 
